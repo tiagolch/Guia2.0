@@ -3,8 +3,6 @@ from django.contrib.auth import admin as auth_admin
 
 from .forms import UserChangeForm, UserCreationForm
 from .models import User
-from ministerio.models import Ministerio, Funcao
-
 
 
 @admin.register(User)

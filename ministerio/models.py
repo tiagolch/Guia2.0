@@ -20,6 +20,9 @@ class Funcao(models.Model):
     def __str__(self):
         return f'{self.funcao}'
 
+    def get_ministerio(self):
+        return f'{self.ministerio_nome}'
+
     class Meta:
         verbose_name_plural = 'Funcoes'
 

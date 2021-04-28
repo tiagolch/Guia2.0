@@ -1,5 +1,19 @@
 from django.contrib import admin
-from .models import *
+from .models import Funcao, Ministerio
 
-admin.site.register(Ministerio)
-admin.site.register(Funcao)
+
+@admin.register(Ministerio)
+class MinisterioAdmin(admin.ModelAdmin):
+    list_display = ['nome', 'ativo']
+    list_editable = ['ativo']
+    list_filter = ['ativo']
+    search_fields = ['nome']
+
+
+@admin.register(Funcao)
+class FuncaoAdmin(admin.ModelAdmin):
+    list_display = ['get_ministerio', 'funcao', 'ativo']
+    list_editable = ['ativo']
+    list_filter = ['ativo']
+    search_fields = ['funcao']
+
